@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAKI PRO - Cifras</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/138/138406.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial, sans-serif;padding:15px}
+h1{text-align:center;font-size:32px;margin:15px 0}
+h1 span{color:#FFD700}
+.top{display:flex;gap:8px;margin-bottom:15px}
+input{flex:1;padding:12px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;font-size:16px}
+button{padding:12px 16px;border-radius:10px;border:none;font-weight:bold}
+.btn-gold{background:#FFD700;color:#000}
+.btn-dark{background:#222;color:#fff;border:1px solid #333}
+#lista{display:flex;flex-direction:column;gap:10px}
+.item{background:#111;border:1px solid #222;padding:14px;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
+.item b{color:#FFD700}
+.cifra-box{background:#0e0e0e;border:1px solid #FFD700;border-radius:12px;padding:15px;margin-top:15px;white-space:pre-wrap;font-family:monospace;line-height:1.6;display:none}
+.tools{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<h1>TAKI <span>PRO</span></h1>
+
+<div class="top">
+<input id="busca" placeholder="Buscar música ou artista...">
+<button class="btn-gold" onclick="buscar()">Buscar</button>
+</div>
+
+<div class="tools">
+<button class="btn-dark" onclick="transpor(1)">Tom +</button>
+<button class="btn-dark" onclick="transpor(-1)">Tom -</button>
+<button class="btn-dark" onclick="toggleScroll()" id="btnScroll">▶ Auto Rolagem</button>
+<button class="btn-gold" onclick="voltar()">← Lista</button>
+</div>
+
+<div id="lista"></div>
+<div id="cifra" class="cifra-box"></div>
+
+<script>
+// BANCO DE CIFRAS EX
